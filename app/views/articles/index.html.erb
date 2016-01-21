@@ -1,0 +1,8 @@
+<h1>Index page</h1>
+
+<% @article.each do |a|%>
+  <p>Article ID:<%= a.id %></p>
+  <p>Article Title:<%= a.title %></p>
+  <p>Article Description:<%= a.description %></p><br/>
+
+<% end %>
