@@ -1,8 +1,9 @@
 <h1>Index page</h1>
 
-<% @article.each do |a|%>
-  <p>Article ID:<%= a.id %></p>
-  <p>Article Title:<%= a.title %></p>
-  <p>Article Description:<%= a.description %></p><br/>
+<% @articles.each do |article|%>
+  <p>Article ID:<%= article.id %></p>
+  <p>Article Title:<%= article.title %></p>
+  <p>Article Description:<%= article.description %></p>
+  <p><%= link_to "edit", edit_article_path(article) %></p><br/>
 
 <% end %>
