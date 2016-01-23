@@ -20,11 +20,20 @@ class ArticlesController < ApplicationController
   def show
   end
 
-  def index
-    @articles = Article.all
+  def edit
   end
 
-  def edit
+  def update
+    if @article.update(article_params)
+      flash[:notice] = "Article was succesffully updated"
+      redirect_to article_path(@article)
+    else
+      render 'edit'
+    end
+  end
+
+  def index
+    @articles = Article.all
   end
 
   def update
