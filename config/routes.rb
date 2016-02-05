@@ -4,7 +4,11 @@ Rails.application.routes.draw do
 
   resources :articles
 
-  root "articles#index"
+  root 'articles#index'
+
+  get 'signup', to: 'users#new'
+
+  resources :categories, except: [:destroy]
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
